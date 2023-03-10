@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/dice-6.png">
+    <link rel="stylesheet" href="style.css" />
+    <title>Rolling Dice Game</title>
+</head>
+<body>
+<header>
+<section class="header-game-text">
+    <img class="header-img1" src="images/rolling-dices-image.png">
+    <h1>Rolling Dice Game</h1>
+    <img class="header-img2" src="images/rolling-dices-image.png">
+</section>
+</header>
+<main>
+    <section class="player player--1">
+        <h2 class="name" id="name--1">Player 1</h2>
+        <h3 class="winner-looser--1"></h3>
+        <p class="score" id="score--1">0</p>
+        <div class="current">
+            <p class="current-label">Current</p>
+            <p class="current-score" id="current--1">0</p>
+
+        </div>
+        <div class="rolled-player-one"></div>
+
+    </section>
+    <section class="player player--2">
+        <h2 class="name" id="name--2">Player 2</h2>
+        <h3 class="winner-looser--2"></h3>
+        <p class="score" id="score--2">0</p>
+        <div class="current">
+            <p class="current-label">Current</p>
+            <p class="current-score" id="current--2">0</p>
+
+        </div>
+        <div class="rolled-player-two"></div>
+    </section>
+
+    <img src="images/dice-5.png" alt="Playing dice" class="dice" />
+    <button class="btn btn--new"> New game</button>
+    <p class="btn p--roll"> Round</p>
+    <p class="btn round-number"> 0</p>
+
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="modal-title">Game Settings</div>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form action="index.html" class="modal-form" method="get">
+                <label>First player name<span class="first-player-name-notice"></span></label>
+                <input type="text" name="" id="first-player-name"/>
+                <label>Second player name<span class="second-player-name-notice"></span></label>
+                <input type="text" name="" id="second-player-name"/>
+                <label>Number of rounds<span class="maxround-notice"></span></label>
+                <input type="number" name="" id="rounds-number"/>
+                <label>Rounds speed (seconds)</label>
+                <input type="number" name="" id="round-speed"/>
+                <button type="button" id="modal-confirm">Confirm</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-overlay"></div>
+</main>
+
+
+<script src="main.js"></script>
+</body>
+</html>

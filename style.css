@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    color: #333;
+    background-image: linear-gradient(to top left, #2e3dbf 0%, #2e94bf 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+header{
+    width: 100rem;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.header-game-text{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.header-img1{
+    width: 6rem;
+    justify-self: end;
+    align-self: center;
+}
+
+.header-img2{
+    width: 6rem;
+    justify-self: start;
+    align-self: center;
+}
+
+.header-game-text h1{
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    padding: 0 1rem 0 1rem;
+    color: white;
+    text-shadow: 2px 2px #2f2f2f;
+}
+
+
+main {
+    position: relative;
+    width: 100rem;
+    min-height: 60rem;
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(200px);
+    filter: blur();
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    overflow: hidden;
+    display: flex;
+}
+.player {
+    flex: 50%;
+    padding: 9rem 0 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.75s;
+}
+
+.name {
+    position: relative;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+.score {
+    font-size: 8rem;
+    font-weight: 300;
+    color: #c7365f;
+    margin-bottom: auto;
+}
+.player--active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+    font-weight: 700;
+}
+.player--active .score {
+    font-weight: 400;
+}
+.player--active .current {
+    opacity: 1;
+}
+.current {
+    background-color: #c7365f;
+    opacity: 0.8;
+    border-radius: 9px;
+    color: #fff;
+    width: 35%;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.75s;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+.current-label {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    color: #ddd;
+}
+.current-score {
+    font-size: 3.5rem;
+}
+
+.btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #444;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.2s;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 0.7rem 2.5rem;
+    border-radius: 50rem;
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+.btn::first-letter {
+    font-size: 2.4rem;
+    display: inline-block;
+
+}
+.btn--new {
+    top: 4rem;
+}
+.p--roll {
+    top: 39.3rem;
+    cursor: default;
+}
+.round-number {
+    top: 46.1rem;
+    cursor: default;
+    font-size: 2.4rem;
+}
+
+.btn:active {
+    transform: translate(-50%, 3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn:focus {
+    outline: none;
+}
+.dice {
+    position: absolute;
+    left: 50%;
+    top: 16.5rem;
+    transform: translateX(-50%);
+    height: 10rem;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+.player--winner {
+    background-color: #2f2f2f;
+}
+.player--winner .name {
+    font-weight: 700;
+    color: #c7365f;
+}
+.hidden {
+    display: none;
+}
+
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header{
+    border-radius: 10px 10px 0 0;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    background-color: tomato;
+
+
+}
+
+.modal-header .modal-title{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.modal-header .modal-close{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.modal-body{
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+.modal-form{
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    font-size: 16px;
+
+}
+
+.modal-form button{
+    font-size: 1.5rem;
+    padding: 10px 0 10px 0;
+    width: 200px;
+    margin: 30px auto 20px auto;
+
+}
+.modal-form input{
+    font-size: 1.6rem;
+    padding: 5px 0 5px 5px;
+    margin: 10px 0 10px 0;
+    border: 1px solid darkgray;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+#modal-overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    pointer-events: none;
+}
+
+#modal-overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.rolled-player-one{
+    width: 90%;
+    text-align: center;
+    min-height: 5rem;
+
+
+}
+
+.rolled-player-two{
+    width: 90%;
+    text-align: center;
+    min-height: 5rem;
+
+}
+
+.rolled-player-one img, .rolled-player-two img{
+    width: 35px;
+    padding-left: 5px;
+}
+
+.winner-looser--1, .winner-looser--2{
+    font-size: 2.5rem;
+    min-height: 5rem;
+
+}
+
+.first-player-name-notice, .second-player-name-notice, .maxround-notice{
+    color: red;
+    margin-left: 15px;
+}
